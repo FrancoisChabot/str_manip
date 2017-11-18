@@ -52,7 +52,9 @@ struct split_string {
       return other;
     }
 
+    iterator& operator=(iterator const&) = default;
     value_type operator*() const { return sub_str_; }
+    value_type const* operator->() const { return &sub_str_; }
 
     bool operator==(iterator const& rhs) const {
       return sub_str_.data() == rhs.sub_str_.data() &&
@@ -104,5 +106,5 @@ split_string<CharT> split(std::basic_string_view<CharT> str,
                           std::basic_string_view<CharT> delim) {
   return split_string<CharT>(str, delim);
 }
-}
+}  // namespace slt
 #endif
