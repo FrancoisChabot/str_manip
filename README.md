@@ -18,7 +18,8 @@ std::string_view delim = ":";
 
 for(auto s : slt::split(src, delim)) {
   std::cout << s << std::endl;
-}```
+}
+```
 
 Notes:
 - Splitting the empty string returns an empty range
